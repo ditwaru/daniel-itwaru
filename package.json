@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "npx dotenvx run -f .env.local -- next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "npx dotenvx run -f .env.local -- next build --turbopack",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
     "@dotenvx/dotenvx": "github:dotenvx/dotenvx",
-    "ditwaru-aws-helpers": "^1.0.0",
+    "ditwaru-aws-helpers": "^1.1.4",
     "next": "15.5.0",
     "react": "19.1.0",
     "react-dom": "19.1.0"

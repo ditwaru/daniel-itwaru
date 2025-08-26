@@ -11,35 +11,30 @@ export default async function About() {
 
   return (
     <div>
+      {data?.sections.map((section) => {
+        if (section.type === "hero") {
+          return (
+            <Hero
+              key={`${section.type}-${section.title}`}
+              title={section.title}
+              description={section.text}
+              variant="green"
+            />
+          );
+        }
+        if (section.type === "content") {
+          return (
+            <Section key={`${section.type}-${section.title}`}>
+              <Heading level={2} size="lg" className="my-6">
+                {section.title}
+              </Heading>
+              <div className="flex flex-col gap-4">{getSectionText(section.text)}</div>
+            </Section>
+          );
+        }
+      })}
       <Section>
-        {data?.sections.map((section) => {
-          if (section.type === "hero") {
-            return (
-              <Hero
-                key={`${section.type}-${section.title}`}
-                title={section.title}
-                description={section.text}
-                variant="green"
-              />
-            );
-          }
-          if (section.type === "content") {
-            return (
-              <Fragment key={`${section.type}-${section.title}`}>
-                <Heading
-                  key={`${section.type}-${section.title}`}
-                  level={2}
-                  size="lg"
-                  className="my-6"
-                >
-                  {section.title}
-                </Heading>
-                <div className="flex flex-col gap-4">{getSectionText(section.text)}</div>
-              </Fragment>
-            );
-          }
-        })}
-        <ButtonLink href="/portfolio" size="lg" className="mt-6">
+        <ButtonLink href="/portfolio" size="lg">
           View My Work
         </ButtonLink>
       </Section>
