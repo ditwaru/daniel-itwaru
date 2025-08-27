@@ -10,7 +10,7 @@ export default async function About() {
   const data = await getPage("daniel-itwaru", "about");
 
   return (
-    <div>
+    <div className="flex flex-col flex-1">
       {data?.sections.map((section) => {
         if (section.type === "hero") {
           return (
@@ -24,11 +24,11 @@ export default async function About() {
         }
         if (section.type === "content") {
           return (
-            <Section key={`${section.type}-${section.title}`}>
+            <Section key={`${section.type}-${section.title}`} className="flex flex-1">
               <Heading level={2} size="lg" className="my-6">
                 {section.title}
               </Heading>
-              <div className="flex flex-col gap-4">{getSectionText(section.text)}</div>
+              <div className="">{getSectionText(section.text)}</div>
             </Section>
           );
         }

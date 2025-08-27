@@ -54,7 +54,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       <div className="mt-auto pt-4">
         <Button href={project.link} variant="outline" size="sm" className="w-full">
-          View Project
+          View
         </Button>
       </div>
     </Card>

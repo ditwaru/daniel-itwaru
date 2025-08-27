@@ -12,7 +12,7 @@ export default async function Home() {
       <ButtonLink size="lg" href="/portfolio">
         View Portfolio
       </ButtonLink>
-      <ButtonLink variant="outline" size="lg" href="/about">
+      <ButtonLink variant="outline" className="bg-white hover:bg-white/80" size="lg" href="/about">
         About Me
       </ButtonLink>
     </Hero>
